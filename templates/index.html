@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{{ url_for('predict')}}" method='post'>
+        <input type="text" placeholder="Applicant Income" name="Applicant Income" required='required'><br>
+        <input type="text" placeholder='Coapplicant Income' name="Coapplicant Income" required='required'><br>
+        <input type="text" placeholder='Loan Amount' name="Loan Amount" required='required'><br>
+        <input type="text" placeholder="Loan Amount Term" name="Loan Amount Term" required='required'><br>
+        <label for="credit_history">Choose credit history:</label>
+        <select name="credit_history">
+            <option value="0">0</option>
+            <option value="1">1</option>
+        </select><br>
+        <label for="gender">Choose a gender:</label>
+        <select name="gender">
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+        </select><br>
+        <label for="married">Marital Status:</label>
+        <select name="married">
+            <option value="married_yes">Married</option>
+            <option value="married_no">Not Married</option>
+        </select><br>
+        <label for="dependents">Number of dependents:</label>
+        <select name="dependents">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3+">3+</option>
+        </select><br>
+        <label for="graduate">Graduated College</label>
+        <select name="graduate">
+            <option value="graduate_yes">Yes</option>
+            <option value="graduate_no">No</option>
+        </select><br>
+        <label for="self_employed">Self employed:</label>
+        <select name="self_employed">
+            <option value="employed_yes">Yes</option>
+            <option value="employed_no">no</option>
+        </select><br>
+        <label for="property_area">Property area:</label>
+        <select name="property_area">
+            <option value="rural">Rural</option>
+            <option value="semiurban">Semiurban</option>
+            <option value="urban">Urban</option>
+        </select>
+
+
+        <button type="submit">Submit</button>
+    </form>
+    {{output}}
+</body>
+</html>
